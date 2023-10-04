@@ -1,0 +1,5 @@
+torch
+autopep8
+tqdm
+torchvision
+torchmetrics
