@@ -163,4 +163,8 @@ cython_debug/
 datasets/*
 !/datasets/.gitkeep
 logs/*
-!logs/*.out
+!logs/*.gitkeep
+wandb
+lightning_logs
+outputs/*
+!/outputs/.gitkeep
