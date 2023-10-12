@@ -8,11 +8,30 @@ virtualenv venv
 pip install -r requirements.txt
 ```
 
+### Linux
+
+```bash
+virtualenv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
+
+## Run
+
+```
+python run.py -m shallow -l wandb
+python run.py -m lenet -l wandb
+python run.py -m alexnet -l wandb
+```
+
+## Dataset
+
+- <https://www.kaggle.com/datasets/arnavr10880/concrete-crack-images-for-classification>
+
 ## Reference
 
 - <https://medium.com/@deepeshdeepakdd2/lenet-5-implementation-on-mnist-in-pytorch-c6f2ee306e37>
 - <https://blog.paperspace.com/writing-lenet5-from-scratch-in-python/>
-- <https://www.kaggle.com/datasets/arnavr10880/concrete-crack-images-for-classification>
 - <https://pytorch.org/tutorials/beginner/data_loading_tutorial.html>
 - <https://pytorch.org/tutorials/beginner/basics/data_tutorial.html#creating-a-custom-dataset-for-your-files>
 - <https://medium.com/jun94-devpblog/pytorch-1-transform-imagefolder-dataloader-7f75f0a460c0>
