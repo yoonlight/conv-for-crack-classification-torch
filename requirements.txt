@@ -3,3 +3,7 @@ autopep8
 tqdm
 torchvision
 torchmetrics
+lightning
+wandb
+grad-cam
+numpy
