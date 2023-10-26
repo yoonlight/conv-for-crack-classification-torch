@@ -6,6 +6,7 @@
 """
 import lightning.pytorch as pl
 from lightning.pytorch.loggers.wandb import WandbLogger
+from lightning.pytorch.accelerators.cpu import CPUAccelerator
 from torch import optim
 from torch.nn import functional as F
 from torch.utils import data
@@ -102,7 +103,7 @@ def load_data(batch_size):
 
 
 if __name__ == "__main__":
-    arg_model, arg_log = parse()
+    arg_model, arg_log, accelerator, devices = parse()
     model_name = arg_model
     if arg_log == "local":
         logger = True
@@ -119,11 +120,14 @@ if __name__ == "__main__":
 
     train_loader, val_loader, test_loader = load_data(batch_size=64)
 
+    if accelerator == "cpu" and devices == None:
+        devices = CPUAccelerator.auto_device_count()
+
     trainer = pl.Trainer(
         max_epochs=30,
         logger=logger,
-        devices=3,
-        accelerator="gpu",
+        devices=devices,
+        accelerator=accelerator,
         profiler="simple",
         default_root_dir="logs"
     )

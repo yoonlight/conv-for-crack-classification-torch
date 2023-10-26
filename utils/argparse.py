@@ -13,7 +13,16 @@ def parse():
         "-l", "--log",
         default="local",
         choices=["local", "wandb"]
+    )
+    parser.add_argument(
+        "-a", "--accelerator",
+        default="cpu",
+        choices=["cpu","gpu"]
+    )
+    parser.add_argument(
+        "--devices",
+        default=None
     )    
     args = parser.parse_args()
 
-    return args.model, args.log
+    return args.model, args.log, args.accelerator, args.devices
