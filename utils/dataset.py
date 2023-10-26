@@ -1,6 +1,5 @@
 from torchvision import transforms, datasets
 from torch.utils import data
-import split_dataset
 
 def load_data(batch_size):
     transform = transforms.Compose([
