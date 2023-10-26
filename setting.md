@@ -3,6 +3,11 @@
 - 환경: Windows
 - 개발 플랫폼: VSCODE
 
+- 모든 명령어는 디렉토리 root에서 진행
+
+![imgs](figs\fig1.jpg)
+
+
 - virtualenv 설치
 
 ```sh
